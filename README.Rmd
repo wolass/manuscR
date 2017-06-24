@@ -1,27 +1,50 @@
 The package for publishing papers using markdown
 
-1. A template for the type of a scientific comunication.
+1. A template for the type of a scientific communication.
 2. Bibliography file
 3. Figures outputs in high quality in a separate folder
 4. Tables either in the file or separate
 5. One file for the manuscript
-6. Seperate file for the statistical analysis
-7. Like a backend (stats) and a frontend (Dynamic report generated)
+6. Separate file for the statistical analysis
+7. Like a back-end (stats) and a front-end (Dynamic report generated)
 8. The file should have a minimally altered structure to make it easy to
     introduce changes from the collaborators
-9. So the statistical file has to be conformant with the literate programming paradigm and be written in R markdown.
+9. So the statistical file has to be conformative with the literate programming paradigm and be written in R markdown.
 
 
-So the statistical analysis should be in a seperate file and be its own independent completely descibed document.
+So the statistical analysis should be in a separate file and be its own independent completely described document.
 
 On top of this source file a new file should be created - the manuscript - it would refer to the analysis results and link to them using variables.
-So one should source the analysis from whithin the manuscript.
+So one should source the analysis from within the manuscript.
 
 This way it will be easier to get to the bottom of where does this value come from.
-Tables can be created separately and all other test and checkpoints can be incorporated into the statistical document which would contain a lot more stats than only what is presented in the mauscript.
+Tables can be created separately and all other test and checkpoints can be incorporated into the statistical document which would contain a lot more stats than only what is presented in the manuscript.
 
 This way it will be truly reproducible, easy to change with the collaborators and informative if someone wants to dig deeper.
 
-It should be published as a supplementary file to the publication. 
+It should be published as a supplementary file to the publication.
 
-Just as I did in the microbiome.
+The tree for the basic publication structure looks like this:
+
+```
+Project
+|-- data
+|-- |-- Datbase.xls
+|-- |-- |Data_other.R
+|-- outputs
+|-- |-- manuscript
+|-- |-- |-- manuscript.pdf
+|-- |-- |-- manuscript.doc
+|-- |-- |-- manuscript.html
+|-- |-- presentations
+|-- |-- |-- presentation.Rpres
+|-- |-- statistics
+|-- |-- |-- stat.Rmd
+|-- |-- figures
+|-- |-- |-- Fig1.Tiff
+|-- |-- |-- Fig2.pdf
+|-- functions
+|-- |-- helperfunction1.R
+|-- Project.Rproj
+|-- README.Rmd
+```
