@@ -10,12 +10,18 @@ The package for publishing papers using markdown
 8. The file should have a minimally altered structure to make it easy to
     introduce changes from the collaborators
 9. So the statistical file has to be conformative with the literate programming paradigm and be written in R markdown.
+10. CODE EXTERNALIZATION:
+    1. REmember to write the whole code for the analysis in a .R file
+    2. Use this .R file to make a .Rmd Knitr report
+    3. Use this .R Code to provide variables for any other outputs you might need
+    4. Think about making functions in separate .R files.
+
 
 
 So the statistical analysis should be in a separate file and be its own independent completely described document.
 
 On top of this source file a new file should be created - the manuscript - it would refer to the analysis results and link to them using variables.
-So one should source the analysis from within the manuscript.
+So one should source the code from within the manuscript, and only the important parts would show up in the manuscript. 
 
 This way it will be easier to get to the bottom of where does this value come from.
 Tables can be created separately and all other test and checkpoints can be incorporated into the statistical document which would contain a lot more stats than only what is presented in the manuscript.
@@ -31,6 +37,11 @@ Project
 |-- data
 |-- |-- Datbase.xls
 |-- |-- |Data_other.R
+|-- code
+|-- |-- helperfunction1.R
+|-- |-- diagrams.R
+|-- |-- table1.R
+|-- |-- analysispart_script.R
 |-- outputs
 |-- |-- manuscript
 |-- |-- |-- manuscript.pdf
@@ -43,8 +54,6 @@ Project
 |-- |-- figures
 |-- |-- |-- Fig1.Tiff
 |-- |-- |-- Fig2.pdf
-|-- functions
-|-- |-- helperfunction1.R
 |-- Project.Rproj
 |-- README.Rmd
 ```
